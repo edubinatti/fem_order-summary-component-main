@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root {
+    --clr-paleBlue: hsl(225, 100%, 94%);
+    --clr-brightBlue: hsl(245, 75%, 52%);
+    --clr-veryPaleBlue: hsl(225, 100%, 98%);
+    --clr-desaturatedBlue: hsl(224, 23%, 55%);
+    --clr-darkBlue: hsl(223, 47%, 23%);
+    --clr-brightBlue-shadow: hsla(245, 75%, 52%, 0.05);
+    --clr-desaturatedBlue-shadow: hsla(224, 23%, 55%, 0.08);
+    --clr-brightBlue-desaturated: #766CF1;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.card {
+    background-color: white;
+    max-width: 370px;
+    border-radius: 20px;
+    box-shadow: 0 .8rem .5rem .3rem var(--clr-desaturatedBlue-shadow);
+    overflow: hidden;
+}
+
+.card .card-img-box img {
+    max-width: 100%;
+}
+
+.card .card-content {
+    text-align: center;
+    padding: 0 2rem 2rem 2rem;
+    --pad-left-right: 1rem;
+}
+
+.card .card-content .card-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 1rem;
+}
+
+.card .card-content .card-description {
+    color: var(--clr-desaturatedBlue);
+    padding: 0 var(--pad-left-right) 1rem var(--pad-left-right);
+}
+
+.card .card-content .card-order {
+    color: var(--clr-desaturatedBlue);
+    padding: 1rem var(--pad-left-right) 1rem var(--pad-left-right);
+    background-color: var(--clr-veryPaleBlue);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .card-content .card-order .card-order-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card-content .card-order .card-order-product-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px black solid; */
+}
+
+.card .card-content .card-order .card-order-product .card-order-product-description {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    /* border: 1px black solid; */
+}
+
+.card .card-content .card-order .card-order-product .card-order-product-description .card-order-product-name {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--clr-darkBlue);
+}
+
+.card .card-content .card-order .card-order-product .card-order-product-description .card-order-product-price {
+    font-size: 0.8rem;
+}
+
+.card .card-content .card-order .card-order-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 900;
+    /* border: 1px black solid; */
+}
+
+.card .card-content .card-order .card-order-actions a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--clr-brightBlue-desaturated);
+    /* border: 1px black solid; */
+}
+
+.card .card-footer {
+    display: grid;
+    /* padding: 1rem var(--pad-left-right) 1rem var(--pad-left-right); */
+    padding: 1rem 0;
+}
+
+.card .card-footer .card-btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    background-color: var(--clr-brightBlue);
+    box-shadow: 0 1rem .8rem .3rem var(--clr-brightBlue-shadow);
+    border-radius: 10px;
+    padding: .8rem;
+}
+
+.card .card-footer .card-btn-primary:hover {
+    cursor: pointer;
+    background: var(--clr-brightBlue-desaturated);
+}
+
+.card .card-footer .card-btn-secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--clr-desaturatedBlue);
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 1rem 0 0 0;
+}
+
+.card .card-footer .card-btn-secondary:hover {
+    cursor: pointer;
+    color: black;
+}
+
+/* media querys -- mobile-first */
+
+@media( max-width: 375px) {
+    body {
+        background: url('/images/pattern-background-mobile.svg') no-repeat top center;
+        background-color: var(--clr-paleBlue);
+    }
+    .card {
+        max-width: 96%;
+        margin: 0 auto;
+    }
+}
+
+@media( min-width: 376px) {
+    body {
+        background: url('/images/pattern-background-desktop.svg') no-repeat top center;
+        background-color: var(--clr-paleBlue);
+    }
+}
